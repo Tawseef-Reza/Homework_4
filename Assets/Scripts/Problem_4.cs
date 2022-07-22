@@ -10,9 +10,14 @@ public class Problem_4 : MonoBehaviour
     //Using transform.name pass the name and position values of each of the Game Objects
     //to PrintOutNameAndPosition. 
     //You should have the results of Part_4, 0,0,0, Part_4_Child -5,-5,-5 and Part_4_GameObject, 5,5,5
+    private Transform child;
+    private Transform otherObject;
     void Start()
     {
-
+        child = transform.GetChild(0);
+        otherObject = GameObject.Find("Part_4_GameObject").GetComponent<Transform>();
+        PrintOutNameAndPosition(child.name, child.position);
+        PrintOutNameAndPosition(otherObject.name, otherObject.position);
     }
 
     //Prints out the name and the position of the variables
